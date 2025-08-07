@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro | Ana Sayfa</title>
+  <link rel="stylesheet" href="../css/anasayfa.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">  
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Pomodoro</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Ana Sayfa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tanim.html">Pomodoro Nedir?</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="giris.html">Giriş Yap</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="welcome-animation" id="welcomeAnimation">
+    <div class="logo-animation">
+      <svg class="logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="48" fill="#fff" stroke="#ff7e5f" stroke-width="4"/>
+        <ellipse cx="50" cy="60" rx="30" ry="18" fill="#ff7e5f"/>
+        <ellipse cx="50" cy="60" rx="24" ry="14" fill="#feb47b"/>
+        <rect x="44" y="30" width="12" height="20" rx="6" fill="#ff7e5f"/>
+        <ellipse cx="50" cy="30" rx="8" ry="5" fill="#feb47b"/>
+      </svg>
+    </div>
+    <div class="welcome-message">
+      <h1>Hoş Geldin!</h1>
+      <p>Pomodoro ile verimli çalışmaya başla.</p>
+      <button class="get-started" id="getStartedBtn">Başla</button>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="container-fluid py-5" style="background: linear-gradient(120deg, #ffecd2 0%, #fcb69f 100%); min-height: 480px;">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7 text-center text-lg-start">
+          <h1 class="display-2 fw-bold text-primary mb-3">Profesyonel ve Modern Pomodoro</h1>
+          <p class="lead text-secondary mb-4">Odaklan, molalarını ver, hedeflerine ulaş. Modern ve güven veren bir deneyimle Pomodoro tekniğini keşfet!</p>
+          <a href="#" class="btn btn-lg btn-success px-5 py-3 shadow-sm">Hemen Başla</a>
+        </div>
+        <div class="col-lg-5 text-center">
+          <!-- Modern çalışma SVG illüstrasyonu -->
+          <svg width="220" height="180" viewBox="0 0 220 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="110" cy="160" rx="90" ry="18" fill="#e0e7ff"/>
+            <rect x="60" y="60" width="100" height="60" rx="12" fill="#fff" stroke="#ff7e5f" stroke-width="3"/>
+            <rect x="80" y="80" width="60" height="20" rx="6" fill="#f3e8ff"/>
+            <circle cx="110" cy="60" r="18" fill="#ff7e5f" stroke="#fff" stroke-width="4"/>
+            <rect x="100" y="40" width="20" height="8" rx="4" fill="#ff7e5f"/>
+            <ellipse cx="110" cy="60" rx="6" ry="4" fill="#fffbe6"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- HİZMETLER/ÖZELLİKLER GRID -->
+  <section class="container py-5">
+    <div class="row g-4 text-center">
+      <div class="col-md-4 col-lg-2">
+        <div class="feature-card p-4 rounded-4 shadow h-100 bg-white">
+          <div class="fs-1 mb-2 text-primary">⏰</div>
+          <div class="fw-bold mb-1">Zaman Yönetimi</div>
+          <div class="text-secondary small">Odaklanmış çalışma ve molalarla zamanı verimli kullan.</div>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-2">
+        <div class="feature-card p-4 rounded-4 shadow h-100 bg-white">
+          <div class="fs-1 mb-2 text-success">📱</div>
+          <div class="fw-bold mb-1">Mobil Uyumlu</div>
+          <div class="text-secondary small">Her cihazda sorunsuz ve şık görünüm.</div>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-2">
+        <div class="feature-card p-4 rounded-4 shadow h-100 bg-white">
+          <div class="fs-1 mb-2 text-warning">🎯</div>
+          <div class="fw-bold mb-1">Hedef Takibi</div>
+          <div class="text-secondary small">Günlük ve haftalık hedeflerini kolayca takip et.</div>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-2">
+        <div class="feature-card p-4 rounded-4 shadow h-100 bg-white">
+          <div class="fs-1 mb-2 text-danger">🔒</div>
+          <div class="fw-bold mb-1">Güvenli</div>
+          <div class="text-secondary small">Verilerin güvende, gizliliğin ön planda.</div>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-2">
+        <div class="feature-card p-4 rounded-4 shadow h-100 bg-white">
+          <div class="fs-1 mb-2 text-info">📊</div>
+          <div class="fw-bold mb-1">İstatistikler</div>
+          <div class="text-secondary small">İlerlemeni grafiklerle görselleştir.</div>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-2">
+        <div class="feature-card p-4 rounded-4 shadow h-100 bg-white">
+          <div class="fs-1 mb-2 text-secondary">⚡</div>
+          <div class="fw-bold mb-1">Hızlı & Kolay</div>
+          <div class="text-secondary small">Kullanıcı dostu, hızlı ve sezgisel arayüz.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAŞARIYA GİDEN YOL / DERS ÇALIŞMA İPUÇLARI BÖLÜMÜ -->
+  <section class="container mb-5">
+    <h3 class="fw-bold text-center mb-4">Başarıya Giden Yol</h3>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-3 col-12">
+        <div class="p-4 rounded-4 shadow-lg text-center text-white" style="background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);">
+          <div class="fs-1 mb-2">📚</div>
+          <div class="fw-bold fs-5">Düzenli Çalış</div>
+          <div>Her gün küçük adımlar at, büyük başarılar yakala.</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="p-4 rounded-4 shadow-lg text-center text-white" style="background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);">
+          <div class="fs-1 mb-2">🎯</div>
+          <div class="fw-bold fs-5">Hedef Belirle</div>
+          <div>Net hedefler motivasyonunu artırır.</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="p-4 rounded-4 shadow-lg text-center text-white" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);">
+          <div class="fs-1 mb-2">🏆</div>
+          <div class="fw-bold fs-5">Kendini Ödüllendir</div>
+          <div>Başarılarını kutlamayı unutma.</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="p-4 rounded-4 shadow-lg text-center text-white" style="background: linear-gradient(135deg, #ff5e62 0%, #ff9966 100%);">
+          <div class="fs-1 mb-2">⭐</div>
+          <div class="fw-bold fs-5">Başarıya Odaklan</div>
+          <div>Odaklan, azimli ol, vazgeçme!</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODERN İLLÜSTRASYONLAR BÖLÜMÜ -->
+  <section class="container mb-5">
+    <div class="row g-4 justify-content-center align-items-center">
+      <div class="col-md-6 col-12 text-center">
+        <!-- Çalışma Masası SVG İllüstrasyonu -->
+        <svg width="100%" height="180" viewBox="0 0 400 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="60" y="120" width="280" height="20" rx="10" fill="#fcb69f"/>
+          <rect x="100" y="60" width="200" height="60" rx="12" fill="#fff" stroke="#ff7e5f" stroke-width="4"/>
+          <rect x="140" y="80" width="120" height="20" rx="6" fill="#f3e8ff"/>
+          <circle cx="200" cy="60" r="18" fill="#ff7e5f" stroke="#fff" stroke-width="4"/>
+          <rect x="190" y="40" width="20" height="8" rx="4" fill="#ff7e5f"/>
+          <ellipse cx="200" cy="60" rx="6" ry="4" fill="#fffbe6"/>
+        </svg>
+        <div class="fw-bold mt-3">Ders Çalışma Ortamı</div>
+      </div>
+      <div class="col-md-6 col-12 text-center">
+        <!-- Başarı/Zafer SVG İllüstrasyonu -->
+        <svg width="100%" height="180" viewBox="0 0 400 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="200" cy="160" rx="120" ry="18" fill="#a1c4fd"/>
+          <rect x="170" y="60" width="60" height="60" rx="16" fill="#fff" stroke="#43cea2" stroke-width="4"/>
+          <polygon points="200,80 210,120 190,120" fill="#43cea2"/>
+          <circle cx="200" cy="60" r="18" fill="#43cea2" stroke="#fff" stroke-width="4"/>
+          <rect x="192" y="40" width="16" height="8" rx="4" fill="#43cea2"/>
+          <ellipse cx="200" cy="60" rx="6" ry="4" fill="#fffbe6"/>
+          <text x="200" y="150" text-anchor="middle" font-size="24" fill="#43cea2" font-family="Arial">🏆</text>
+        </svg>
+        <div class="fw-bold mt-3">Başarı ve Hedefe Ulaşma</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODERN FOOTER -->
+  <footer class="bg-light text-center text-lg-start mt-5 border-top pt-3 pb-2">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <span class="text-muted mb-2 mb-md-0">© 2025 Pomodoro | Hazırlayan: Bilgesu Barış</span>
+      <span>
+        <a href="#" class="text-muted me-3"><i class="bi bi-github"></i></a>
+        <a href="#" class="text-muted me-3"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-muted"><i class="bi bi-linkedin"></i></a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/anasayfa.js"></script>
+</body>
+</html>

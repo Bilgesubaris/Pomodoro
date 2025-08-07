@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Paneli</title>
+  <link rel="stylesheet" href="../css/anasayfa.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="background: linear-gradient(120deg, #f3e8ff 0%, #e0e7ff 100%); min-height: 100vh;">
+  <!-- Üst Menü -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold text-primary" href="#">Pomodoro</a>
+      <div class="d-flex align-items-center gap-3">
+        <a href="#" class="btn btn-outline-secondary btn-sm">Profil</a>
+        <a href="giris.html" class="btn btn-outline-danger btn-sm">Çıkış Yap</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-4">
+    <div class="row g-4 align-items-stretch">
+      <!-- Hoş Geldin ve Motivasyon -->
+      <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+        <div class="p-4 rounded-4 shadow bg-white h-100 d-flex flex-column justify-content-between">
+          <div>
+            <h4 class="fw-bold mb-2">Hoş Geldin!</h4>
+            <div class="text-secondary mb-3">Bugün de hedeflerine ulaşmak için harika bir gün!</div>
+          </div>
+          <div class="mt-4">
+            <div class="fw-bold text-success mb-2">Motivasyon</div>
+            <div class="text-secondary" id="motivationMsg">Başlamak için mükemmel olmanı bekleme, mükemmel olmak için başla.</div>
+          </div>
+        </div>
+      </div>
+      <!-- Pomodoro Süre Ayarları -->
+      <div class="p-3 mb-4 rounded-4 shadow bg-white text-center" style="max-width: 500px; margin: 0 auto;">
+        <form id="timerSettings" class="row g-2 align-items-center justify-content-center">
+          <div class="col-12 col-md-4">
+            <label for="pomodoroInput" class="form-label mb-1">Pomodoro (dk)</label>
+            <input type="number" min="1" max="120" class="form-control" id="pomodoroInput" value="25">
+          </div>
+          <div class="col-12 col-md-4">
+            <label for="shortBreakInput" class="form-label mb-1">Kısa Mola (dk)</label>
+            <input type="number" min="1" max="60" class="form-control" id="shortBreakInput" value="5">
+          </div>
+          <div class="col-12 col-md-4">
+            <label for="longBreakInput" class="form-label mb-1">Uzun Mola (dk)</label>
+            <input type="number" min="1" max="60" class="form-control" id="longBreakInput" value="15">
+          </div>
+          <div class="col-12 mt-2">
+            <button type="submit" class="btn btn-primary">Süreleri Kaydet</button>
+          </div>
+        </form>
+      </div>
+      <!-- Pomodoro Zamanlayıcı -->
+      <div class="col-lg-6 col-12 mb-4 mb-lg-0">
+        <div class="p-4 rounded-4 shadow-lg bg-gradient text-center d-flex flex-column align-items-center justify-content-center h-100" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+          <h2 class="fw-bold mb-3">Pomodoro Zamanlayıcı</h2>
+          <div class="display-1 fw-bold mb-3" id="timer">25:00</div>
+          <div class="d-flex gap-3 justify-content-center mb-3">
+            <button class="btn btn-success btn-lg px-4" id="startBtn">Başlat</button>
+            <button class="btn btn-warning btn-lg px-4" id="pauseBtn">Duraklat</button>
+            <button class="btn btn-secondary btn-lg px-4" id="resetBtn">Sıfırla</button>
+          </div>
+          <div class="mt-2">
+            <button class="btn btn-outline-info btn-sm" id="breakBtn">Kısa Mola</button>
+            <button class="btn btn-outline-primary btn-sm" id="longBreakBtn">Uzun Mola</button>
+          </div>
+        </div>
+      </div>
+      <!-- Hedefler ve İstatistikler -->
+      <div class="col-lg-3 col-12">
+        <div class="p-4 rounded-4 shadow bg-white h-100">
+          <h5 class="fw-bold mb-3">Günlük Hedefler</h5>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Pomodoro
+              <span class="badge bg-success rounded-pill" id="pomodoroCount">0</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Kısa Mola
+              <span class="badge bg-info rounded-pill" id="shortBreakCount">0</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Uzun Mola
+              <span class="badge bg-primary rounded-pill" id="longBreakCount">0</span>
+            </li>
+          </ul>
+          <h6 class="fw-bold">İstatistikler</h6>
+          <div class="text-secondary small">Toplam Pomodoro: <span id="totalPomodoro">0</span></div>
+          <div class="text-secondary small">En uzun odak: <span id="maxFocus">0 dk</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-light text-center text-lg-start mt-5 border-top pt-3 pb-2">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <span class="text-muted mb-2 mb-md-0">© 2025 Pomodoro | Hazırlayan: Bilgesu Barış</span>
+      <span>
+        <a href="#" class="text-muted me-3"><i class="bi bi-github"></i></a>
+        <a href="#" class="text-muted me-3"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-muted"><i class="bi bi-linkedin"></i></a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Varsayılan süreler
+    let pomodoroDuration = 25;
+    let shortBreakDuration = 5;
+    let longBreakDuration = 15;
+    let timerInterval;
+    let time = pomodoroDuration * 60;
+    let running = false;
+    const timerEl = document.getElementById('timer');
+    const startBtn = document.getElementById('startBtn');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const breakBtn = document.getElementById('breakBtn');
+    const longBreakBtn = document.getElementById('longBreakBtn');
+    const pomodoroCount = document.getElementById('pomodoroCount');
+    const shortBreakCount = document.getElementById('shortBreakCount');
+    const longBreakCount = document.getElementById('longBreakCount');
+    const totalPomodoro = document.getElementById('totalPomodoro');
+    const maxFocus = document.getElementById('maxFocus');
+    // Ayar inputları
+    const pomodoroInput = document.getElementById('pomodoroInput');
+    const shortBreakInput = document.getElementById('shortBreakInput');
+    const longBreakInput = document.getElementById('longBreakInput');
+    const timerSettings = document.getElementById('timerSettings');
+    let pomodoros = 0, shortBreaks = 0, longBreaks = 0, maxFocusMin = 0;
+
+    function updateTimer() {
+      const min = String(Math.floor(time / 60)).padStart(2, '0');
+      const sec = String(time % 60).padStart(2, '0');
+      timerEl.textContent = `${min}:${sec}`;
+    }
+    function startTimer() {
+      if (running) return;
+      running = true;
+      timerInterval = setInterval(() => {
+        if (time > 0) {
+          time--;
+          updateTimer();
+        } else {
+          clearInterval(timerInterval);
+          running = false;
+          pomodoros++;
+          pomodoroCount.textContent = pomodoros;
+          totalPomodoro.textContent = pomodoros;
+          if (pomodoroDuration > maxFocusMin) maxFocusMin = pomodoroDuration;
+          maxFocus.textContent = maxFocusMin + ' dk';
+          time = pomodoroDuration * 60;
+          updateTimer();
+        }
+      }, 1000);
+    }
+    function pauseTimer() {
+      clearInterval(timerInterval);
+      running = false;
+    }
+    function resetTimer() {
+      clearInterval(timerInterval);
+      running = false;
+      time = pomodoroDuration * 60;
+      updateTimer();
+    }
+    function shortBreak() {
+      clearInterval(timerInterval);
+      running = false;
+      time = shortBreakDuration * 60;
+      updateTimer();
+      shortBreaks++;
+      shortBreakCount.textContent = shortBreaks;
+    }
+    function longBreak() {
+      clearInterval(timerInterval);
+      running = false;
+      time = longBreakDuration * 60;
+      updateTimer();
+      longBreaks++;
+      longBreakCount.textContent = longBreaks;
+    }
+    startBtn.onclick = startTimer;
+    pauseBtn.onclick = pauseTimer;
+    resetBtn.onclick = resetTimer;
+    breakBtn.onclick = shortBreak;
+    longBreakBtn.onclick = longBreak;
+    updateTimer();
+
+    // Süre ayarları formu
+    if (timerSettings) {
+      timerSettings.addEventListener('submit', function(e) {
+        e.preventDefault();
+        pomodoroDuration = parseInt(pomodoroInput.value) || 25;
+        shortBreakDuration = parseInt(shortBreakInput.value) || 5;
+        longBreakDuration = parseInt(longBreakInput.value) || 15;
+        time = pomodoroDuration * 60;
+        updateTimer();
+      });
+    }
+  </script>
+</body>
+</html>

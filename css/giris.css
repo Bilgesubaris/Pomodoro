@@ -1,0 +1,107 @@
+body {
+    background: #F7F9FC;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-box {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(44,62,80,0.08);
+    padding: 2rem 1.5rem;
+    max-width: 350px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.auth-box h2 {
+    font-weight: 700;
+    color: #2C3E50;
+}
+
+.auth-box input,
+.auth-box button {
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+.form-check {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 1rem;
+    margin-left: 20px;
+    width: fit-content !important;
+    max-width: fit-content !important;
+    padding: 0;
+}
+
+.form-check-input {
+    width: 16px !important;
+    height: 16px !important;
+    border-radius: 3px !important;
+    appearance: none;
+    -webkit-appearance: none;
+    background: #fff;
+    border: 1.5px solid #b0b0b0;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    outline: none;
+    box-shadow: none;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.form-check-input:checked {
+    background-color: #667eea;
+    border-color: #667eea;
+}
+
+.form-check-input:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1.5px;
+    width: 4px;
+    height: 8px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    display: block;
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 2px #e0e7ff;
+}
+
+.form-check-label {
+    font-size: 0.92rem;
+    color: #6c757d;
+    cursor: pointer;
+    margin: 0 !important;
+    line-height: 1;
+    white-space: nowrap;
+    width: auto !important;
+    display: inline-block;
+    padding: 0;
+    flex-shrink: 0;
+    flex-grow: 0;
+    user-select: none;
+}
+
+footer {
+    color: #2C3E50;
+    font-size: 0.95rem;
+    margin-top: 2rem;
+}
