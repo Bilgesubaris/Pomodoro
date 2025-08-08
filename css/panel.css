@@ -1,0 +1,208 @@
+/* Panel Sayfası Modern Stiller */
+
+/* Genel */
+html, body {
+  min-height: 100%;
+}
+
+body {
+  background: linear-gradient(135deg, #f3e8ff 0%, #e0e7ff 100%);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.navbar-brand {
+  font-weight: 800;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 1rem;
+}
+
+/* Timer Card */
+#timerCard {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+#timerCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.15) !important;
+}
+
+/* Timer Display */
+#timer {
+  font-family: 'Courier New', monospace;
+  font-weight: 800;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Buttons */
+.btn {
+  transition: all 0.2s ease;
+  border-radius: 12px;
+}
+
+.btn-lg {
+  border-radius: 14px;
+}
+
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+}
+
+.btn-outline-primary { border-color: #6366f1; color: #6366f1; }
+.btn-outline-primary:hover { background: #6366f1; color: #fff; }
+
+/* Inputs */
+.form-control {
+  border-radius: 12px;
+  border: 2px solid #eef2ff;
+}
+
+.form-control:focus {
+  border-color: #a5b4fc;
+  box-shadow: 0 0 0 0.2rem rgba(165, 180, 252, 0.25);
+}
+
+/* Cards */
+.card { transition: all 0.3s ease; border: none; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.1) !important; }
+
+/* Task List */
+#taskList .task-item.done .task-text { text-decoration: line-through; opacity: 0.7; }
+.task-item { transition: all 0.2s ease; }
+.task-item:hover { background-color: #f8f9fa; }
+
+/* Notes Area */
+#notesArea { resize: vertical; min-height: 220px; }
+
+/* Focus Mode Enhanced */
+body.focus-mode {
+  background: radial-gradient(ellipse at center, #0b1020 0%, #05070f 100%) !important;
+  color: #e5e7eb;
+}
+
+body.focus-mode #timerCard {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+body.focus-mode #timerCard h2 { display: none; }
+
+body.focus-mode #timer {
+  color: #e5e7eb !important;
+  font-size: clamp(3rem, 8vw, 8rem) !important;
+  letter-spacing: 2px;
+  text-shadow: 0 8px 24px rgba(0,0,0,0.6);
+}
+
+/* Tüm içerik için karartma ve merkezleme */
+body.focus-mode .container {
+  min-height: calc(100vh - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Odak modunda sadece timer görünsün */
+body.focus-mode .focus-hide,
+body.focus-mode .footer-glass { display: none !important; }
+
+/* Odak modu geçişleri */
+body, #timerCard, .navbar, .footer-glass, .glass-card, #timer {
+  transition: all 0.35s ease-in-out;
+}
+
+/* Odak modunda butonlar sadeleşsin */
+body.focus-mode #timerCard .btn { display: none !important; }
+
+/* Odak moduna girerken küçük bir büyütme efekti */
+body.focus-mode #timerCard { transform: scale(1.02); }
+
+/* Footer */
+.footer-glass {
+  background: rgba(255,255,255,0.85) !important;
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Hero Banner */
+.glass-banner {
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(0,0,0,0.05);
+  backdrop-filter: blur(10px);
+}
+
+/* Stats Cards */
+.stats-card {
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(0,0,0,0.05);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Circular Progress */
+.timer-wrapper {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  display: grid;
+  place-items: center;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-ring__bg {
+  fill: transparent;
+  stroke: rgba(255,255,255,0.5);
+  stroke-width: 14;
+}
+
+.progress-ring__progress {
+  fill: transparent;
+  stroke: #ef4444; /* kırmızı vurgu */
+  stroke-width: 14;
+  stroke-linecap: round;
+  stroke-dasharray: 628; /* 2 * PI * r (r=100) */
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.4s ease;
+}
+
+.timer-wrapper #timer {
+  position: absolute;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #timer { font-size: 2.5rem; }
+  .btn-lg { padding: 0.5rem 1rem; font-size: 0.95rem; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #eef2ff; }
+::-webkit-scrollbar-thumb { background: #a5b4fc; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #818cf8; }
