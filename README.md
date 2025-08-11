@@ -35,4 +35,3 @@ Developed to meet my personal productivity needs, this project goes beyond the c
 1. Clone this repository:  
    ```bash
    git clone https://github.com/Bilgesubaris/Pomodoro.git
-s
