@@ -206,3 +206,66 @@ body.focus-mode #timerCard { transform: scale(1.02); }
 ::-webkit-scrollbar-track { background: #eef2ff; }
 ::-webkit-scrollbar-thumb { background: #a5b4fc; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #818cf8; }
+
+/* Spacing refinements */
+.container .row.g-3, .container .row.g-4 { margin-bottom: 0.5rem; }
+.container .mb-3 { margin-bottom: 1rem !important; }
+.container .mb-4 { margin-bottom: 1.25rem !important; }
+
+/* Refined glass look */
+.glass-card {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06) !important;
+}
+.glass-banner { box-shadow: 0 10px 40px rgba(0,0,0,0.07) !important; }
+
+/* Buttons polish */
+.btn { box-shadow: 0 6px 16px rgba(0,0,0,0.06); }
+.btn-lg { box-shadow: 0 10px 22px rgba(0,0,0,0.08); }
+.btn-success { background: linear-gradient(135deg, #22c55e, #16a34a); border: none; }
+.btn-warning { background: linear-gradient(135deg, #f59e0b, #d97706); border: none; color: #1f2937; }
+.btn-secondary { background: linear-gradient(135deg, #94a3b8, #64748b); border: none; }
+
+/* Task list styling */
+#taskList { gap: 8px; }
+#taskList .list-group-item {
+  border: 1px solid rgba(0,0,0,0.06) !important;
+  border-radius: 12px !important;
+  margin-bottom: 8px;
+  padding: 0.65rem 0.85rem;
+}
+#taskList .list-group-item .task-text { font-weight: 500; }
+#taskList .list-group-item.done { background: #f8fafc; }
+#taskList input[type="checkbox"] { width: 18px; height: 18px; border-radius: 6px; }
+#newTaskInput { padding: 0.6rem 0.75rem; }
+
+/* Notes polish */
+#notesArea { background: #fbfbff; border: 1px solid rgba(0,0,0,0.06); }
+
+/* Timer heading and wrapper */
+#timerCard h2 { letter-spacing: -0.5px; }
+.timer-wrapper { margin-top: 4px; margin-bottom: 8px; }
+
+/* Footer glass elevation */
+.footer-glass { box-shadow: 0 -6px 24px rgba(0,0,0,0.06); }
+
+/* Subtle scale on interactive cards */
+.stats-card:hover, .glass-card:hover { transform: translateY(-2px); }
+
+/* Mobile tweaks */
+@media (max-width: 576px) {
+  .glass-banner { padding: 1.25rem !important; }
+  #timer { font-size: 2.25rem; }
+  #timerCard .btn-lg { font-size: 1rem; padding: 0.55rem 0.9rem; }
+  #newTaskInput { font-size: 0.95rem; }
+}
+
+/* Navbar button sizing - larger */
+.navbar .btn {
+  padding: 0.55rem 0.95rem;
+  font-size: 1rem;
+  border-radius: 12px;
+}
+.navbar .btn-sm { padding: 0.5rem 0.9rem; font-size: 0.98rem; }
+
+/* Name spacing */
+.navbar #userName { margin-left: 0.6rem; font-weight: 600; color: #4b5563 !important; }

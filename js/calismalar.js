@@ -2,7 +2,7 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore, collection, getDocs, query, orderBy, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import { initializeFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -26,6 +26,7 @@ const sessionsRow = document.getElementById('sessionsRow');
 const searchInput = document.getElementById('searchInput');
 const emptyState = document.getElementById('emptyState');
 const userEmailEl = document.getElementById('userEmail');
+const navUserName = document.getElementById('navUserName');
 
 let currentUid = null;
 let cloudSessions = [];
@@ -136,7 +137,18 @@ onAuthStateChanged(auth, async (user) => {
   }
   
   currentUid = user.uid;
-  userEmailEl.textContent = user.email;
+  try {
+    const userDocRef = doc(db, 'users', currentUid);
+    const userSnap = await getDoc(userDocRef);
+    const data = userSnap.exists() ? userSnap.data() : {};
+    const displayName = data.name || data.fullName || auth.currentUser.displayName || auth.currentUser.email;
+    userEmailEl.textContent = displayName;
+    if (navUserName) navUserName.textContent = displayName;
+  } catch (e) {
+    console.warn('Kullanıcı adı yüklenemedi, e-posta gösteriliyor.', e);
+    userEmailEl.textContent = auth.currentUser.email;
+    if (navUserName) navUserName.textContent = auth.currentUser.email;
+  }
   
   try {
     cloudSessions = await loadCloudSessions();

@@ -27,6 +27,7 @@ body {
 main.container {
   padding-top: 2rem;
   padding-bottom: 3rem;
+  max-width: 1140px;
 }
 
 /* Header Section */
@@ -38,6 +39,7 @@ main.container {
   margin-bottom: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  gap: 0.75rem;
 }
 
 h2.fw-bold {
@@ -94,7 +96,7 @@ h2.fw-bold {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
+  border-radius: 18px;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
@@ -114,7 +116,7 @@ h2.fw-bold {
 }
 
 .card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-6px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
@@ -123,7 +125,7 @@ h2.fw-bold {
 }
 
 .card-body {
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .card-title {
@@ -173,10 +175,10 @@ h2.fw-bold {
   line-height: 1.7;
   margin-bottom: 1.5rem;
   font-size: 0.95rem;
-  background: rgba(102, 126, 234, 0.05);
+  background: rgba(255,255,255,0.6);
   padding: 1rem;
   border-radius: 10px;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid #764ba2;
 }
 
 /* Badges */
@@ -210,6 +212,8 @@ h2.fw-bold {
   font-size: 1.2rem;
   font-weight: 500;
   border: 2px dashed rgba(255, 255, 255, 0.3);
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 #emptyState::before {
@@ -298,6 +302,7 @@ h2.fw-bold {
   
   #searchInput {
     font-size: 0.9rem;
+    padding: 0.65rem 1rem;
   }
   
   h2.fw-bold {
@@ -305,8 +310,9 @@ h2.fw-bold {
   }
   
   .d-flex.flex-column.flex-md-row {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
+  #sessionsRow { row-gap: 1rem; }
 }
 
 @media (max-width: 576px) {
@@ -355,5 +361,62 @@ h2.fw-bold {
 }
 
 .card:hover {
-  animation: float 3s ease-in-out infinite;
+  animation: none;
 }
+
+/* Navbar back button polish */
+.navbar .btn.btn-outline-light.btn-sm {
+  border-color: rgba(255,255,255,0.6);
+  color: #374151;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+.navbar .btn.btn-outline-light.btn-sm:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* Header spacing */
+.d-flex.flex-column.flex-md-row .badge { align-self: center; }
+
+/* Search input placeholder readability */
+#searchInput::placeholder { color: #6b7280; opacity: 0.9; }
+
+/* Card polish */
+.card .badge { margin-right: 6px; }
+
+/* Improve contrast for blue elements */
+.text-secondary.small { color: #1f2937 !important; text-shadow: none; }
+.small b {
+  -webkit-text-fill-color: initial;
+  color: #1f2937;
+  font-weight: 700;
+}
+.badge.bg-success, .badge.bg-secondary { box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+
+/* Card title color darker for better readability */
+.card-title { color: #111827; }
+
+/* Search input text color */
+#searchInput { color: #111827; }
+
+/* Header texts contrast */
+h2.fw-bold { color: #ffffff; text-shadow: 0 2px 6px rgba(0,0,0,0.25); }
+#userEmail { color: rgba(255,255,255,0.92); }
+
+/* Card time label badge-like background */
+.text-secondary.small {
+  background: rgba(255,255,255,0.75);
+  border-radius: 10px;
+  padding: 0.25rem 0.5rem;
+  display: inline-flex;
+}
+
+/* Navbar button sizing - larger */
+.navbar .btn { padding: 0.55rem 0.95rem; font-size: 1rem; border-radius: 12px; }
+.navbar .btn-sm { padding: 0.5rem 0.9rem; font-size: 0.98rem; }
+
+/* Name spacing */
+#navUserName { margin-left: 0.6rem; font-weight: 600; color: #374151; }
