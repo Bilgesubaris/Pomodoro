@@ -3,128 +3,840 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Kayıt Ol | Pomodoro</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+  >
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Giriş / Kayıt CSS -->
   <link rel="stylesheet" href="../css/giris.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
-  <div class="container">
-    <div class="row justify-content-center align-items-center min-vh-100">
-      <div class="col-md-6 col-lg-4">
-        <div class="card shadow-lg border-0 rounded-4">
-          <div class="card-body p-5">
-            <h2 class="text-center mb-4 fw-bold text-success">Kayıt Ol</h2>
-            
-            <form id="registerForm">
-              <div class="mb-3">
-                <label for="name" class="form-label">Ad Soyad</label>
-                <input type="text" class="form-control" id="name" required>
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">E-posta</label>
-                <input type="email" class="form-control" id="email" required>
-              </div>
-              <div class="mb-3">
-                <label for="password" class="form-label">Şifre</label>
-                <input type="password" class="form-control" id="password" required minlength="6">
-                <div class="form-text">En az 6 karakter olmalıdır.</div>
-              </div>
-              <div class="mb-3">
-                <label for="confirmPassword" class="form-label">Şifre Tekrar</label>
-                <input type="password" class="form-control" id="confirmPassword" required>
-              </div>
-              <button type="submit" class="btn btn-success w-100 mb-3">Kayıt Ol</button>
-            </form>
-            
-            <div class="text-center mt-4">
-              <p class="mb-0">Zaten hesabın var mı? <a href="giris.html" class="text-primary fw-bold">Giriş Yap</a></p>
-            </div>
-            
-            <div id="message" class="alert mt-3" style="display: none;"></div>
-          </div>
+
+  <main class="login-page">
+
+    <!-- =========================================
+         SOL TARAF
+         ========================================= -->
+
+    <section class="login-intro">
+
+      <div class="intro-content">
+
+        <!-- Logo -->
+
+        <a href="anasayfa.html" class="brand">
+
+          <span class="brand-icon">
+            <i class="bi bi-stopwatch"></i>
+          </span>
+
+          <span>Pomodoro</span>
+
+        </a>
+
+
+        <!-- Başlık -->
+
+        <div class="intro-text">
+
+          <span class="intro-badge">
+            <i class="bi bi-rocket-takeoff"></i>
+            Odaklanmaya bugün başla
+          </span>
+
+
+          <h1>
+            Kendi çalışma
+            <span>rutininizi oluştur.</span>
+          </h1>
+
+
+          <p>
+            Ücretsiz hesabını oluştur, çalışma sürelerini
+            takip et ve hedeflerine daha düzenli ilerle.
+          </p>
+
         </div>
+
+
+        <!-- Özellikler -->
+
+        <div class="feature-list">
+
+          <div class="feature-item">
+
+            <div class="feature-icon">
+              <i class="bi bi-stopwatch"></i>
+            </div>
+
+            <div>
+
+              <strong>
+                Kişisel Pomodoro sürelerin
+              </strong>
+
+              <span>
+                Çalışma ve mola sürelerini kendine göre ayarla.
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="feature-item">
+
+            <div class="feature-icon">
+              <i class="bi bi-list-check"></i>
+            </div>
+
+            <div>
+
+              <strong>
+                Görevlerini tek yerde yönet
+              </strong>
+
+              <span>
+                Günlük çalışmalarını ve görevlerini takip et.
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="feature-item">
+
+            <div class="feature-icon">
+              <i class="bi bi-graph-up-arrow"></i>
+            </div>
+
+            <div>
+
+              <strong>
+                İlerlemeni takip et
+              </strong>
+
+              <span>
+                Çalışma geçmişini kaydet ve gelişimini gör.
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
-    </div>
-  </div>
 
-  <!-- Firebase SDK -->
+    </section>
+
+
+    <!-- =========================================
+         SAĞ TARAF
+         ========================================= -->
+
+    <section class="login-section">
+
+      <div class="login-box">
+
+
+        <!-- Mobil Logo -->
+
+        <a
+          href="anasayfa.html"
+          class="mobile-brand"
+        >
+
+          <span class="brand-icon">
+            <i class="bi bi-stopwatch"></i>
+          </span>
+
+          Pomodoro
+
+        </a>
+
+
+        <!-- Başlık -->
+
+        <div class="login-header">
+
+          <div class="login-icon">
+            <i class="bi bi-person-plus"></i>
+          </div>
+
+
+          <div>
+
+            <h2>
+              Hesabını oluştur 🚀
+            </h2>
+
+            <p>
+              Birkaç adımda Pomodoro'yu kullanmaya başla.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- =====================================
+             KAYIT FORMU
+             ===================================== -->
+
+        <form id="registerForm">
+
+
+          <!-- AD SOYAD -->
+
+          <div class="form-group">
+
+            <label for="name">
+              Ad Soyad
+            </label>
+
+            <div class="input-wrapper">
+
+              <i class="bi bi-person"></i>
+
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Adınızı ve soyadınızı girin"
+                autocomplete="name"
+                required
+              >
+
+            </div>
+
+          </div>
+
+
+          <!-- E-POSTA -->
+
+          <div class="form-group">
+
+            <label for="email">
+              E-posta adresi
+            </label>
+
+            <div class="input-wrapper">
+
+              <i class="bi bi-envelope"></i>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="ornek@email.com"
+                autocomplete="email"
+                required
+              >
+
+            </div>
+
+          </div>
+
+
+          <!-- ŞİFRE -->
+
+          <div class="form-group">
+
+            <label for="password">
+              Şifre
+            </label>
+
+            <div class="input-wrapper">
+
+              <i class="bi bi-lock"></i>
+
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="En az 6 karakter"
+                autocomplete="new-password"
+                minlength="6"
+                required
+              >
+
+
+              <button
+                type="button"
+                class="password-toggle"
+                id="togglePassword"
+                aria-label="Şifreyi göster"
+              >
+
+                <i class="bi bi-eye"></i>
+
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- ŞİFRE TEKRAR -->
+
+          <div class="form-group">
+
+            <label for="confirmPassword">
+              Şifre Tekrar
+            </label>
+
+            <div class="input-wrapper">
+
+              <i class="bi bi-shield-lock"></i>
+
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                placeholder="Şifrenizi tekrar girin"
+                autocomplete="new-password"
+                minlength="6"
+                required
+              >
+
+
+              <button
+                type="button"
+                class="password-toggle"
+                id="toggleConfirmPassword"
+                aria-label="Şifreyi göster"
+              >
+
+                <i class="bi bi-eye"></i>
+
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- KAYIT BUTONU -->
+
+          <button
+            type="submit"
+            class="login-button"
+            id="registerButton"
+          >
+
+            <span id="registerButtonText">
+              Hesap Oluştur
+            </span>
+
+            <i class="bi bi-arrow-right"></i>
+
+          </button>
+
+        </form>
+
+
+        <!-- MESAJ -->
+
+        <div
+          id="message"
+          class="message"
+          role="alert"
+          style="display: none;"
+        ></div>
+
+
+        <!-- GİRİŞ -->
+
+        <div class="register-area">
+
+          <span>
+            Zaten hesabın var mı?
+          </span>
+
+          <a href="giris.html">
+
+            Giriş Yap
+
+            <i class="bi bi-arrow-up-right"></i>
+
+          </a>
+
+        </div>
+
+
+        <!-- ANA SAYFA -->
+
+        <a
+          href="anasayfa.html"
+          class="back-home"
+        >
+
+          <i class="bi bi-arrow-left"></i>
+
+          Ana sayfaya dön
+
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================
+       FIREBASE
+       ========================================= -->
+
   <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-    // Your web app's Firebase configuration
+    import {
+      initializeApp
+    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+
+    import {
+      getAuth,
+      createUserWithEmailAndPassword
+    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+    import {
+      getFirestore,
+      doc,
+      setDoc,
+      serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+
+    // ========================================
+    // FIREBASE CONFIG
+    // ========================================
+
     const firebaseConfig = {
-      apiKey: "AIzaSyCoIcZ0noCXfPSkyZsacZajiH5fjbh32mk",
-      authDomain: "pomodoro-7bde7.firebaseapp.com",
-      projectId: "pomodoro-7bde7",
-      storageBucket: "pomodoro-7bde7.firebasestorage.app",
-      messagingSenderId: "428259058667",
-      appId: "1:428259058667:web:9cdb91f7d1d4d88f34efae",
-      measurementId: "G-9PZZ9256PW"
+
+      apiKey:
+        "AIzaSyCoIcZ0noCXfPSkyZsacZajiH5fjbh32mk",
+
+      authDomain:
+        "pomodoro-7bde7.firebaseapp.com",
+
+      projectId:
+        "pomodoro-7bde7",
+
+      storageBucket:
+        "pomodoro-7bde7.firebasestorage.app",
+
+      messagingSenderId:
+        "428259058667",
+
+      appId:
+        "1:428259058667:web:9cdb91f7d1d4d88f34efae",
+
+      measurementId:
+        "G-9PZZ9256PW"
+
     };
 
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const db = getFirestore(app);
 
-    // DOM elements
-    const registerForm = document.getElementById('registerForm');
-    const messageDiv = document.getElementById('message');
+    const app =
+      initializeApp(firebaseConfig);
 
-    function showMessage(message, type = 'info') {
-      messageDiv.textContent = message;
-      messageDiv.className = `alert alert-${type} mt-3`;
-      messageDiv.style.display = 'block';
+    const auth =
+      getAuth(app);
+
+    const db =
+      getFirestore(app);
+
+
+    // ========================================
+    // DOM
+    // ========================================
+
+    const registerForm =
+      document.getElementById(
+        "registerForm"
+      );
+
+    const messageDiv =
+      document.getElementById(
+        "message"
+      );
+
+    const registerButton =
+      document.getElementById(
+        "registerButton"
+      );
+
+    const registerButtonText =
+      document.getElementById(
+        "registerButtonText"
+      );
+
+    const passwordInput =
+      document.getElementById(
+        "password"
+      );
+
+    const confirmPasswordInput =
+      document.getElementById(
+        "confirmPassword"
+      );
+
+    const togglePassword =
+      document.getElementById(
+        "togglePassword"
+      );
+
+    const toggleConfirmPassword =
+      document.getElementById(
+        "toggleConfirmPassword"
+      );
+
+
+    // ========================================
+    // MESAJ
+    // ========================================
+
+    function showMessage(
+      message,
+      type = "info"
+    ) {
+
+      messageDiv.textContent =
+        message;
+
+      messageDiv.className =
+        `message ${type}`;
+
+      messageDiv.style.display =
+        "flex";
+
     }
 
-    // Kayıt ol
-    registerForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      const confirmPassword = document.getElementById('confirmPassword').value;
 
-      // Şifre kontrolü
-      if (password !== confirmPassword) {
-        showMessage('Şifreler eşleşmiyor!', 'danger');
+    // ========================================
+    // ŞİFRE GÖSTER / GİZLE
+    // ========================================
+
+    function setupPasswordToggle(
+      button,
+      input
+    ) {
+
+      if (!button || !input) {
         return;
       }
 
-      if (password.length < 6) {
-        showMessage('Şifre en az 6 karakter olmalıdır!', 'danger');
-        return;
-      }
 
-      try {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        const user = userCredential.user;
-        
-        // Kullanıcı bilgilerini Firestore'a kaydet
-        await setDoc(doc(db, "users", user.uid), {
-          name: name,
-          email: email,
-          pomodoroSettings: {
-            pomodoro: 25,
-            shortBreak: 5,
-            longBreak: 15
-          },
-          createdAt: new Date()
-        });
+      button.addEventListener(
+        "click",
+        () => {
 
-        showMessage('Hesap başarıyla oluşturuldu!', 'success');
-        setTimeout(() => {
-          window.location.href = 'panel.html';
-        }, 1500);
-      } catch (error) {
-        showMessage('Kayıt hatası: ' + error.message, 'danger');
+          const isPassword =
+            input.type === "password";
+
+
+          input.type =
+            isPassword
+              ? "text"
+              : "password";
+
+
+          button.innerHTML =
+            isPassword
+              ? '<i class="bi bi-eye-slash"></i>'
+              : '<i class="bi bi-eye"></i>';
+
+        }
+      );
+
+    }
+
+
+    setupPasswordToggle(
+      togglePassword,
+      passwordInput
+    );
+
+
+    setupPasswordToggle(
+      toggleConfirmPassword,
+      confirmPasswordInput
+    );
+
+
+    // ========================================
+    // KAYIT
+    // ========================================
+
+    registerForm.addEventListener(
+      "submit",
+      async (event) => {
+
+        event.preventDefault();
+
+
+        const name =
+          document
+            .getElementById("name")
+            .value
+            .trim();
+
+        const email =
+          document
+            .getElementById("email")
+            .value
+            .trim();
+
+        const password =
+          passwordInput.value;
+
+        const confirmPassword =
+          confirmPasswordInput.value;
+
+
+        // ====================================
+        // FORM KONTROLLERİ
+        // ====================================
+
+        if (!name) {
+
+          showMessage(
+            "Lütfen adınızı ve soyadınızı girin.",
+            "error"
+          );
+
+          return;
+
+        }
+
+
+        if (!email) {
+
+          showMessage(
+            "Lütfen e-posta adresinizi girin.",
+            "error"
+          );
+
+          return;
+
+        }
+
+
+        if (password.length < 6) {
+
+          showMessage(
+            "Şifre en az 6 karakter olmalıdır.",
+            "error"
+          );
+
+          return;
+
+        }
+
+
+        if (
+          password !==
+          confirmPassword
+        ) {
+
+          showMessage(
+            "Şifreler eşleşmiyor. Lütfen tekrar kontrol edin.",
+            "error"
+          );
+
+          return;
+
+        }
+
+
+        // ====================================
+        // BUTONU DEVRE DIŞI BIRAK
+        // ====================================
+
+        registerButton.disabled =
+          true;
+
+        registerButtonText.textContent =
+          "Hesap oluşturuluyor...";
+
+
+        try {
+
+          // ==================================
+          // FIREBASE AUTH KAYDI
+          // ==================================
+
+          const userCredential =
+            await createUserWithEmailAndPassword(
+              auth,
+              email,
+              password
+            );
+
+
+          const user =
+            userCredential.user;
+
+
+          // ==================================
+          // FIRESTORE KULLANICI KAYDI
+          // ==================================
+
+          await setDoc(
+            doc(
+              db,
+              "users",
+              user.uid
+            ),
+            {
+
+              name:
+                name,
+
+              email:
+                email,
+
+              pomodoroSettings: {
+
+                pomodoro:
+                  25,
+
+                shortBreak:
+                  5,
+
+                longBreak:
+                  15
+
+              },
+
+              createdAt:
+                serverTimestamp()
+
+            }
+          );
+
+
+          // ==================================
+          // BAŞARILI
+          // ==================================
+
+          showMessage(
+            "Hesabın başarıyla oluşturuldu. Paneline yönlendiriliyorsun.",
+            "success"
+          );
+
+
+          registerButtonText.textContent =
+            "Hesap oluşturuldu ✓";
+
+
+          setTimeout(
+            () => {
+
+              window.location.href =
+                "panel.html";
+
+            },
+            900
+          );
+
+        }
+
+
+        catch (error) {
+
+          console.error(
+            "Kayıt hatası:",
+            error
+          );
+
+
+          let errorMessage =
+            "Kayıt sırasında bir hata oluştu.";
+
+
+          if (
+            error.code ===
+            "auth/email-already-in-use"
+          ) {
+
+            errorMessage =
+              "Bu e-posta adresiyle zaten bir hesap bulunuyor.";
+
+          }
+
+          else if (
+            error.code ===
+            "auth/invalid-email"
+          ) {
+
+            errorMessage =
+              "Geçerli bir e-posta adresi girin.";
+
+          }
+
+          else if (
+            error.code ===
+            "auth/weak-password"
+          ) {
+
+            errorMessage =
+              "Şifreniz çok zayıf. Daha güçlü bir şifre seçin.";
+
+          }
+
+          else if (
+            error.code ===
+            "auth/network-request-failed"
+          ) {
+
+            errorMessage =
+              "İnternet bağlantınızı kontrol edip tekrar deneyin.";
+
+          }
+
+
+          showMessage(
+            errorMessage,
+            "error"
+          );
+
+
+          registerButton.disabled =
+            false;
+
+          registerButtonText.textContent =
+            "Hesap Oluştur";
+
+        }
+
       }
-    });
+    );
+
   </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

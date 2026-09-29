@@ -3,90 +3,545 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Giriş Yap | Pomodoro</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+  >
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="../css/giris.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
-  <div class="container">
-    <div class="row justify-content-center align-items-center min-vh-100">
-      <div class="col-md-6 col-lg-4">
-        <div class="card shadow-lg border-0 rounded-4">
-          <div class="card-body p-5">
-            <h2 class="text-center mb-4 fw-bold text-primary">Giriş Yap</h2>
-            
-            <form id="loginForm">
-              <div class="mb-3">
-                <label for="email" class="form-label">E-posta</label>
-                <input type="email" class="form-control" id="email" required>
-              </div>
-              <div class="mb-3">
-                <label for="password" class="form-label">Şifre</label>
-                <input type="password" class="form-control" id="password" required>
-              </div>
-              <button type="submit" class="btn btn-primary w-100 mb-3">Giriş Yap</button>
-            </form>
-            
-            <div class="text-center mt-4">
-              <p class="mb-0">Hesabın yok mu? <a href="kayit.html" class="text-primary fw-bold">Kayıt Ol</a></p>
-            </div>
-            
-            <div id="message" class="alert mt-3" style="display: none;"></div>
-          </div>
+
+  <main class="login-page">
+
+    <!-- SOL TARAF -->
+    <section class="login-intro">
+
+      <div class="intro-content">
+
+        <a href="anasayfa.html" class="brand">
+          <span class="brand-icon">
+            <i class="bi bi-stopwatch"></i>
+          </span>
+
+          <span>Pomodoro</span>
+        </a>
+
+        <div class="intro-text">
+
+          <span class="intro-badge">
+            <i class="bi bi-stars"></i>
+            Odaklan. Çalış. Başar.
+          </span>
+
+          <h1>
+            Daha iyi odaklan,
+            <span>daha verimli çalış.</span>
+          </h1>
+
+          <p>
+            Çalışma sürelerini planla, görevlerini takip et
+            ve ilerlemeni tek bir yerden yönet.
+          </p>
+
         </div>
+
+        <div class="feature-list">
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="bi bi-clock-history"></i>
+            </div>
+
+            <div>
+              <strong>Odaklanma sürelerini takip et</strong>
+              <span>Pomodoro tekniğiyle çalışmalarını planla.</span>
+            </div>
+          </div>
+
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="bi bi-check2-circle"></i>
+            </div>
+
+            <div>
+              <strong>Görevlerini yönet</strong>
+              <span>Günlük görevlerini kolayca takip et.</span>
+            </div>
+          </div>
+
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="bi bi-bar-chart-line"></i>
+            </div>
+
+            <div>
+              <strong>Çalışma geçmişini görüntüle</strong>
+              <span>Çalışmalarını kaydet ve gelişimini takip et.</span>
+            </div>
+          </div>
+
+        </div>
+
       </div>
-    </div>
-  </div>
 
-  <!-- Firebase SDK -->
+    </section>
+
+
+    <!-- SAĞ TARAF -->
+    <section class="login-section">
+
+      <div class="login-box">
+
+        <!-- MOBİL LOGO -->
+        <a href="anasayfa.html" class="mobile-brand">
+          <span class="brand-icon">
+            <i class="bi bi-stopwatch"></i>
+          </span>
+          Pomodoro
+        </a>
+
+
+        <div class="login-header">
+
+          <div class="login-icon">
+            <i class="bi bi-person"></i>
+          </div>
+
+          <div>
+            <h2>Hoş geldin 👋</h2>
+
+            <p>
+              Hesabına giriş yap ve çalışmaya devam et.
+            </p>
+          </div>
+
+        </div>
+
+
+        <!-- GİRİŞ FORMU -->
+        <form id="loginForm">
+
+          <!-- E-POSTA -->
+          <div class="form-group">
+
+            <label for="email">
+              E-posta adresi
+            </label>
+
+            <div class="input-wrapper">
+
+              <i class="bi bi-envelope"></i>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="ornek@email.com"
+                autocomplete="email"
+                required
+              >
+
+            </div>
+
+          </div>
+
+
+          <!-- ŞİFRE -->
+          <div class="form-group">
+
+            <div class="password-label">
+
+              <label for="password">
+                Şifre
+              </label>
+
+            </div>
+
+            <div class="input-wrapper">
+
+              <i class="bi bi-lock"></i>
+
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Şifrenizi girin"
+                autocomplete="current-password"
+                required
+              >
+
+              <button
+                type="button"
+                class="password-toggle"
+                id="togglePassword"
+                aria-label="Şifreyi göster"
+              >
+                <i class="bi bi-eye"></i>
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- GİRİŞ BUTONU -->
+          <button
+            type="submit"
+            class="login-button"
+            id="loginButton"
+          >
+
+            <span id="loginButtonText">
+              Giriş Yap
+            </span>
+
+            <i class="bi bi-arrow-right"></i>
+
+          </button>
+
+        </form>
+
+
+        <!-- MESAJ -->
+        <div
+          id="message"
+          class="message"
+          role="alert"
+          style="display: none;"
+        ></div>
+
+
+        <!-- KAYIT -->
+        <div class="register-area">
+
+          <span>
+            Henüz hesabın yok mu?
+          </span>
+
+          <a href="kayit.html">
+            Kayıt Ol
+            <i class="bi bi-arrow-up-right"></i>
+          </a>
+
+        </div>
+
+
+        <!-- ANA SAYFA -->
+        <a
+          href="anasayfa.html"
+          class="back-home"
+        >
+          <i class="bi bi-arrow-left"></i>
+          Ana sayfaya dön
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FIREBASE -->
   <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-    // Your web app's Firebase configuration
+    import {
+      initializeApp
+    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+
+    import {
+      getAuth,
+      signInWithEmailAndPassword
+    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+
+    // ================================
+    // FIREBASE
+    // ================================
+
     const firebaseConfig = {
-      apiKey: "AIzaSyCoIcZ0noCXfPSkyZsacZajiH5fjbh32mk",
-      authDomain: "pomodoro-7bde7.firebaseapp.com",
-      projectId: "pomodoro-7bde7",
-      storageBucket: "pomodoro-7bde7.firebasestorage.app",
-      messagingSenderId: "428259058667",
-      appId: "1:428259058667:web:9cdb91f7d1d4d88f34efae",
-      measurementId: "G-9PZZ9256PW"
+
+      apiKey:
+        "AIzaSyCoIcZ0noCXfPSkyZsacZajiH5fjbh32mk",
+
+      authDomain:
+        "pomodoro-7bde7.firebaseapp.com",
+
+      projectId:
+        "pomodoro-7bde7",
+
+      storageBucket:
+        "pomodoro-7bde7.firebasestorage.app",
+
+      messagingSenderId:
+        "428259058667",
+
+      appId:
+        "1:428259058667:web:9cdb91f7d1d4d88f34efae",
+
+      measurementId:
+        "G-9PZZ9256PW"
+
     };
 
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
 
-    // DOM elements
-    const loginForm = document.getElementById('loginForm');
-    const messageDiv = document.getElementById('message');
+    const app =
+      initializeApp(firebaseConfig);
 
-    function showMessage(message, type = 'info') {
-      messageDiv.textContent = message;
-      messageDiv.className = `alert alert-${type} mt-3`;
-      messageDiv.style.display = 'block';
+    const auth =
+      getAuth(app);
+
+
+    // ================================
+    // DOM
+    // ================================
+
+    const loginForm =
+      document.getElementById("loginForm");
+
+    const messageDiv =
+      document.getElementById("message");
+
+    const loginButton =
+      document.getElementById("loginButton");
+
+    const loginButtonText =
+      document.getElementById("loginButtonText");
+
+    const togglePassword =
+      document.getElementById("togglePassword");
+
+    const passwordInput =
+      document.getElementById("password");
+
+
+    // ================================
+    // MESAJ
+    // ================================
+
+    function showMessage(
+      message,
+      type = "info"
+    ) {
+
+      messageDiv.textContent =
+        message;
+
+      messageDiv.className =
+        `message ${type}`;
+
+      messageDiv.style.display =
+        "flex";
+
     }
 
-    // Giriş yap
-    loginForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
 
-      try {
-        await signInWithEmailAndPassword(auth, email, password);
-        showMessage('Giriş başarılı!', 'success');
-        setTimeout(() => {
-          window.location.href = 'panel.html';
-        }, 1500);
-      } catch (error) {
-        showMessage('Giriş hatası: ' + error.message, 'danger');
+    // ================================
+    // ŞİFRE GÖSTER / GİZLE
+    // ================================
+
+    if (togglePassword) {
+
+      togglePassword.addEventListener(
+        "click",
+        () => {
+
+          const isPassword =
+            passwordInput.type === "password";
+
+
+          passwordInput.type =
+            isPassword
+              ? "text"
+              : "password";
+
+
+          togglePassword.innerHTML =
+            isPassword
+              ? '<i class="bi bi-eye-slash"></i>'
+              : '<i class="bi bi-eye"></i>';
+
+        }
+      );
+
+    }
+
+
+    // ================================
+    // GİRİŞ
+    // ================================
+
+    loginForm.addEventListener(
+      "submit",
+      async (event) => {
+
+        event.preventDefault();
+
+
+        const email =
+          document
+            .getElementById("email")
+            .value
+            .trim();
+
+        const password =
+          passwordInput.value;
+
+
+        if (!email || !password) {
+
+          showMessage(
+            "Lütfen e-posta ve şifrenizi girin.",
+            "error"
+          );
+
+          return;
+
+        }
+
+
+        // Butonu devre dışı bırak
+        loginButton.disabled =
+          true;
+
+        loginButtonText.textContent =
+          "Giriş yapılıyor...";
+
+
+        try {
+
+          await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+          );
+
+
+          showMessage(
+            "Giriş başarılı! Paneline yönlendiriliyorsun.",
+            "success"
+          );
+
+
+          loginButtonText.textContent =
+            "Başarılı ✓";
+
+
+          setTimeout(() => {
+
+            window.location.href =
+              "panel.html";
+
+          }, 700);
+
+
+        }
+
+        catch (error) {
+
+          console.error(
+            "Giriş hatası:",
+            error
+          );
+
+
+          let errorMessage =
+            "E-posta veya şifre hatalı.";
+
+
+          if (
+            error.code ===
+            "auth/user-not-found"
+          ) {
+
+            errorMessage =
+              "Bu e-posta adresiyle kayıtlı bir hesap bulunamadı.";
+
+          }
+
+          else if (
+            error.code ===
+            "auth/wrong-password"
+          ) {
+
+            errorMessage =
+              "Şifre yanlış. Lütfen tekrar deneyin.";
+
+          }
+
+          else if (
+            error.code ===
+            "auth/invalid-credential"
+          ) {
+
+            errorMessage =
+              "E-posta veya şifre hatalı.";
+
+          }
+
+          else if (
+            error.code ===
+            "auth/invalid-email"
+          ) {
+
+            errorMessage =
+              "Geçerli bir e-posta adresi girin.";
+
+          }
+
+          else if (
+            error.code ===
+            "auth/too-many-requests"
+          ) {
+
+            errorMessage =
+              "Çok fazla başarısız deneme yapıldı. Lütfen daha sonra tekrar deneyin.";
+
+          }
+
+
+          showMessage(
+            errorMessage,
+            "error"
+          );
+
+
+          loginButton.disabled =
+            false;
+
+          loginButtonText.textContent =
+            "Giriş Yap";
+
+        }
+
       }
-    });
+    );
+
   </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html> 
+</html>
